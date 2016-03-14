@@ -22,8 +22,13 @@ get '/work' do
 	"please work"
 end
 
-get '/cat' do
-	"<div>
-	<img src='http://bit.ly/1eze8aE', style='border: 3px dashed red'>
-	</div>"
+post '/named-cat' do
+	p params
+	@friend = params[:name]
+	#["Amigo", "Oscar", "Viking"].sample
+	erb(:index)
+end
+
+get '/cat-form' do
+	erb(:cat_form)
 end
